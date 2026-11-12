@@ -3,14 +3,20 @@
 Packs the Natlu app (`com.mushaf.reader`) downloads on request from its tafsir library and reads
 offline. Each is a gzip-compressed SQLite file; `catalog.json` lists them with their SHA-256.
 
-## Source and licence
+## Sources and licences
 
-All texts come from the Tafsir Center for Quranic Studies' dataset
-([tafsircenter/tafsir-mcp-data](https://huggingface.co/datasets/tafsircenter/tafsir-mcp-data), file `quran.db`), licensed
-[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Attribution: Tafsir Center for Quranic Studies (https://tafsir.net).
-The packs are adapted from it; what was changed is listed in [CORRECTIONS.md](CORRECTIONS.md) and
-made by the build tools in the app repository (`mushaf_app/tools/build_packs.py`, `pack_books.py`,
-`pack_common.py`). These files carry the same licence.
+The packs come from two sources, each under its own licence:
+
+- **Tafsir Center for Quranic Studies** — `ibn_kathir`, `tabari`, `baghawi`, `irab`: from its dataset
+  ([tafsircenter/tafsir-mcp-data](https://huggingface.co/datasets/tafsircenter/tafsir-mcp-data), file `quran.db`), licensed
+  [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Attribution: Tafsir Center for Quranic Studies (https://tafsir.net).
+  What was changed is listed in [CORRECTIONS.md](CORRECTIONS.md) and made by the build tools in the app repository
+  (`mushaf_app/tools/build_packs.py`, `pack_books.py`, `pack_common.py`). These packs carry the same licence.
+- **OpenITI** — `qurtubi`, `shawkani`, `ibn_ashur`: from the [OpenITI](https://doi.org/10.5281/zenodo.3082463) corpus
+  (release 2025.1.9), its versions taken from altafsir.com, licensed
+  [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). Source files, pinned commits and changes are in
+  [OPENITI.md](OPENITI.md); the build tools are `mushaf_app/tools/build_openiti_packs.py` and `openiti_tafsir.py`.
+  These packs carry the same licence: no commercial use, and adaptations shared alike.
 
 | Pack | Book | Version | Download | On device | SHA-256 |
 |---|---|---|---|---|---|
@@ -18,6 +24,9 @@ made by the build tools in the app repository (`mushaf_app/tools/build_packs.py`
 | `tabari` | جامع البيان عن تأويل آي القرآن | 1 | 7.8 MB | 39.3 MB | `240440d7d8b76c72…` |
 | `baghawi` | معالم التنزيل | 1 | 3.4 MB | 17.3 MB | `a8ab7e5dad365f93…` |
 | `irab` | إعراب القرآن الكريم | 1 | 1.9 MB | 16.3 MB | `5628c6291ccc3b03…` |
+| `qurtubi` | الجامع لأحكام القرآن | 1 | 4.9 MB | 19.8 MB | `176d0dccedc6ab02…` |
+| `shawkani` | فتح القدير | 1 | 3.1 MB | 12.8 MB | `4c6b23c702894791…` |
+| `ibn_ashur` | التحرير والتنوير | 1 | 7.2 MB | 28.7 MB | `4a9f65b04a046978…` |
 
 ## Pack format (schema 1)
 
